@@ -1,0 +1,93 @@
+.div {
+    display: flex;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35rem;
+    height: 35rem;
+    justify-content: center;
+    background-image: url(https://images8.alphacoders.com/998/998795.jpg);
+    background-size: cover;
+    filter: drop-shadow(0px 8px 8px rgb(0, 0, 0));
+    border-radius: 1rem;
+}
+
+.form {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    margin-top: 0.5rem;
+    height: 2rem;
+    width: 10rem;
+    border: none;
+    border-radius: 0.7rem;   
+    filter: drop-shadow(0px 8px 8px rgb(0, 0, 0)); 
+}
+.input:focus {
+    margin-top: 0.5rem;
+    background-color: lightgray;
+    height: 2rem;
+    width: 10rem;
+    border: none;
+    border-radius: 0.7rem;   
+    filter: drop-shadow(0px 8px 8px rgb(0, 0, 0)); 
+}
+
+.button{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.7rem;
+    background-color: rgb(52,146,52);
+    filter: drop-shadow(0px 8px 8px rgb(0, 0, 0));
+    color:white;
+    font-family: 'ChildrenSans';
+    font-size: 120%;
+    border: none;
+}
+.button:hover{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.7rem;
+    background-color: rgb(83,238,83);
+    color: black;
+    filter: drop-shadow(0px 8px 8px rgb(0, 0, 0));
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+}
+
+.titulo{
+    align-items: center;
+    justify-content: center;
+    color: rgb(83, 238, 83);
+    font-family: "get_schwifty";
+    font-size: 3rem;
+    filter: drop-shadow(0px 8px 8px black);
+ }
+ 
+.titulo:hover{
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+ }
+
+.label{
+    color: white;
+    font-family: 'ChildrenSans';
+    font-size: 140%;
+
+}
+ 
+ @font-face{
+    font-family: "get_schwifty";
+    src: url('../../fonts/get_schwifty.ttf');
+    font-family: 'Bazinga-Regular';
+    src: url('../../fonts/Bazinga-Regular.otf');
+    font-family: 'Bazinga-RegularItalic';
+    src: url('../../fonts/Bazinga-RegularItalic.otf');
+    font-family: 'ChildrenSans';
+    src: url('../../fonts/ChildrenSans.ttf');
+
+ }

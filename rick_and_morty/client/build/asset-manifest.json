@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e18f4b9.css",
+    "main.js": "/static/js/main.7b473f99.js",
+    "static/media/Bazinga-Regular.otf": "/static/media/Bazinga-Regular.ba5a33fb3f65b925c43d.otf",
+    "static/media/Bazinga-RegularItalic.otf": "/static/media/Bazinga-RegularItalic.dda917c706625fc92e07.otf",
+    "static/media/ChildrenSans.ttf": "/static/media/ChildrenSans.90922360b78510047cc2.ttf",
+    "static/media/get_schwifty.ttf": "/static/media/get_schwifty.c3d1dfc692e3547fed16.ttf",
+    "index.html": "/index.html",
+    "main.7e18f4b9.css.map": "/static/css/main.7e18f4b9.css.map",
+    "main.7b473f99.js.map": "/static/js/main.7b473f99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e18f4b9.css",
+    "static/js/main.7b473f99.js"
+  ]
+}

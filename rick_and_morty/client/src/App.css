@@ -1,0 +1,9 @@
+.App {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   height: 50rem;
+   /* background-image: url(https://images.alphacoders.com/876/876589.jpg); */
+   background-image: url(https://images8.alphacoders.com/998/998795.jpg);
+   background-size: cover;
+}
