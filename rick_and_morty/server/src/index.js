@@ -1,5 +1,6 @@
 const http = require("http");
-const dataCharacters = require("./utils/data");
+const getCharById = require ("./controllers/getCharById");
+/* const dataCharacters = require("./utils/data"); */
 
 http
   .createServer((req, res) => {
@@ -15,22 +16,9 @@ http
 
     switch (url) {
       case `/rickandmorty/character/${id}`:
-        // traigo el personaje (esta en el archivo data)
-        const personaje = require("./utils/data");
-        ////////////////////////////////////////////////////////////
-        // filtro por id
-        const character = personaje.find((per) => per.id === parseInt(id));
-        ////////////////////////////////////////////////////////////
-        // devuelvo en formato Json
-        res.writeHead(200, { "Content-type": "application/json" });
-        return res.end(JSON.stringify(character));
-      //////////////////////////////////////////////////////////////////////////////
-
-      default:
-        res.writeHead(404);
-        res.end();
-    }
-    /*       // Como se hizo en el CR
+        getCharById(res, id)
+      }
+      /*       // Como se hizo en el CR
         if (url.includes('rickandmorty/character')){
           let id2 = url.split('/').at(-1)
           let chara = dataCharacters.find((coso) => coso.id=== Number(id2))
@@ -40,3 +28,22 @@ http
         } */
   })
   .listen(3001, "localhost");
+
+
+    //case `/rickandmorty/character/${id}`:
+    //   //////////////////////////////////////////////////////////////////////////////
+    //   // traigo el personaje (esta en el archivo data)
+    //   const personaje = require("./utils/data");
+    //   ////////////////////////////////////////////////////////////
+    //   // filtro por id
+    //   const character = personaje.find((per) => per.id === parseInt(id));
+    //   ////////////////////////////////////////////////////////////
+    //   // devuelvo en formato Json
+    //   res.writeHead(200, { "Content-type": "application/json" });
+    //   return res.end(JSON.stringify(character));
+    // //////////////////////////////////////////////////////////////////////////////
+    
+    // default:
+    //   res.writeHead(404);
+    //   res.end();
+    //   //////////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import SearchBar from "../searchBar/SearchBar"
 import style from './navBar.module.css'
 import { Link, NavLink } from "react-router-dom"
@@ -7,9 +8,21 @@ const Nav = (props) => {
         props.logout()
     }
 
+    const [navBar, setNavBar] = useState(false)
+    console.log(navBar);
+
+    const handleNavBar = () => {
+        setNavBar(true)
+    }
+    const escHandleNavBar = () => {
+        setNavBar(false)
+    }
+
+
+
     return (
-        <div className={style.navBar}>
-            <button className={style.btnDesp}>→</button>
+        <div className={navBar ? style.navBar : style.navBar2}>
+            <button onClick={navBar ? escHandleNavBar : handleNavBar} className={style.desp}>{navBar ? '<' : '>'}</button>
             <p className={style.user}>{props.email}</p>
 
             <NavLink to='/home' style={{textDecoration:'none'}}>
