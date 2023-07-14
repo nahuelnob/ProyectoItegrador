@@ -47,7 +47,7 @@ const handleFavorite = () => {
             isFav ? (
             <button onClick={handleFavorite} className={style.botonFav}>💚</button>
             )  : (
-            <button onClick={handleFavorite} className={style.botonFav}> 🤍</button>
+            <button onClick={handleFavorite} className={style.botonFav}>🤍</button>
             )
          }
         
