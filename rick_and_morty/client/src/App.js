@@ -34,8 +34,8 @@ function App() {
    //          LOGIN
 
    const [access, setAccess] = useState(false)
-      const EMAIL = 'nahue@gmail.com'
-      const PASSWORD = 'nahue74'
+   const EMAIL = 'nahue@gmail.com'
+   const PASSWORD = 'nahue74'
    const navigate = useNavigate()
 
    
@@ -47,6 +47,12 @@ function App() {
       } else {
          alert('Alguno de los datos son incorrectos')
       }
+/*       ({ email, password }) => {
+         axios(`http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`).then(({ data }) => {
+           const { access } = data;
+           setAccess(access);
+           access && navigate("/home");
+         }); */
    }
    const logout = () => {
       setAccess(false);

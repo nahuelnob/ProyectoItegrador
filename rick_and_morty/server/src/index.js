@@ -1,49 +1,28 @@
-const http = require("http");
-const getCharById = require ("./controllers/getCharById");
-/* const dataCharacters = require("./utils/data"); */
+const express = require("express");
+const morgan = require("morgan");
+const router = require("./routes");
+const server = express();
 
-http
-  .createServer((req, res) => {
-    // Para que puedan entrar todos -> CORS
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    ////////////////////////////////////////////////////////////
-    // hago destructoring al req y me quedo con el url
-    const { url } = req;
-    ////////////////////////////////////////////////////////////
-    // me quedo con el id del http:
-    let id = url.split("/").pop();
-    ////////////////////////////////////////////////////////////
+server.use(morgan("dev"));
+server.use(express.json());
+// Middleware --> Siempre tiene q tener el next
+// Este middleware esta configurando los headers (osea q cliente va a tener acceso al servidor)
+server.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", "true"); // aca permitimos el envio de cookies
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  ); // permite los 2 anteriores
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE"); // ver que solicitudes de http vamos a autorizar
+  next();
+});
+// o puedo usar un cors
+// npm i cors || const cors = require('express') || server.use(cors())
 
-    switch (url) {
-      case `/rickandmorty/character/${id}`:
-        getCharById(res, id)
-      }
-      /*       // Como se hizo en el CR
-        if (url.includes('rickandmorty/character')){
-          let id2 = url.split('/').at(-1)
-          let chara = dataCharacters.find((coso) => coso.id=== Number(id2))
-          res.writeHead(200, { "Content-type": "application/json" });
-          res.end(JSON.stringify(chara));
+server.use("/rickandmorty", router);
+const PORT = 3001;
 
-        } */
-  })
-  .listen(3001, "localhost");
-
-
-    //case `/rickandmorty/character/${id}`:
-    //   //////////////////////////////////////////////////////////////////////////////
-    //   // traigo el personaje (esta en el archivo data)
-    //   const personaje = require("./utils/data");
-    //   ////////////////////////////////////////////////////////////
-    //   // filtro por id
-    //   const character = personaje.find((per) => per.id === parseInt(id));
-    //   ////////////////////////////////////////////////////////////
-    //   // devuelvo en formato Json
-    //   res.writeHead(200, { "Content-type": "application/json" });
-    //   return res.end(JSON.stringify(character));
-    // //////////////////////////////////////////////////////////////////////////////
-    
-    // default:
-    //   res.writeHead(404);
-    //   res.end();
-    //   //////////////////////////////////////////////////////////////////////////////
+server.listen(PORT, () =>
+  console.log(`server is listening on port ${PORT} || NOB`)
+);
