@@ -9,7 +9,7 @@ export default function Card(props) {
 ///////////////////////////////////////////////////
 // Traigo el estado (en vez de mapStateToProps)
 const myFavorites = useSelector((state)=> state.myFavorites)
-const allCharactersFav = useSelector((state)=> state.allCharactersFav)
+//const allCharactersFav = useSelector((state)=> state.allCharactersFav) --> ESTE YA NO LO USO
 // myFavorites es el nombre del estado ahora
 ///////////////////////////////////////////////////
 // Hice esto en vez de mapDispatchToProps

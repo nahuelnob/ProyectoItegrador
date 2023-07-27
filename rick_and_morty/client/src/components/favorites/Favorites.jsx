@@ -9,6 +9,8 @@ import { useState } from "react";
 ////////////////////////////////////////////////
 
 const Favorites = (props) => {
+  console.log("colso", props);
+  const { onClose } = props;
 
   ////////////////////////////////////////////////
   //Ultima integracion
@@ -34,7 +36,7 @@ const Favorites = (props) => {
   ////////////////////////////////////////////////
 
   const lista = props.myFavorites.map((carta) => {
-    const { id, name, status, species, gender, origin, image, onClose } = carta;
+    const { id, name, status, species, gender, origin, image } = carta;
 
     return (
       <Card
@@ -59,9 +61,7 @@ const Favorites = (props) => {
             onChange={handleOrder}
             name="Order"
           >
-            <option className={style.opcion}>
-              Select order
-            </option>
+            <option className={style.opcion}>Select order</option>
             <option className={style.opcion} value="A">
               Ascendente
             </option>

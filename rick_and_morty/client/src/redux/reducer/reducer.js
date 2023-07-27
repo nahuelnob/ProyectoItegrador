@@ -2,27 +2,31 @@ import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET } from "../action/types";
 
 export const initialState = {
   myFavorites: [],
-  allCharactersFav: [], // VA A TENER TODOS LOS FAVORITOS (solo lo cambian el add o el remove)
+  //allCharactersFav: [], // VA A TENER TODOS LOS FAVORITOS (solo lo cambian el add o el remove) --> YA NO LO USO
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case ADD_FAV:
       return {
         ...state,
-        myFavorites: [...state.allCharactersFav, action.payload],
-        allCharactersFav: [...state.allCharactersFav, action.payload],
+        myFavorites: action.payload
       };
 
     case REMOVE_FAV:
       return {
         ...state,
+        myFavorites: action.payload
+
+        /*      
+        *Esto ya no lo uso   
         myFavorites: state.allCharactersFav.filter(
           (favorito) => favorito.id !== Number(action.payload)
         ),
         allCharactersFav: state.allCharactersFav.filter(
           (favorito) => favorito.id !== Number(action.payload)
-        ),
+        ), */
       };
 
     case FILTER:
