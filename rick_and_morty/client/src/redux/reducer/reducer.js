@@ -2,7 +2,7 @@ import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET } from "../action/types";
 
 export const initialState = {
   myFavorites: [],
-  //allCharactersFav: [], // VA A TENER TODOS LOS FAVORITOS (solo lo cambian el add o el remove) --> YA NO LO USO
+  allCharactersFav: [], // VA A TENER TODOS LOS FAVORITOS (solo lo cambian el add o el remove)
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -11,13 +11,15 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAV:
       return {
         ...state,
-        myFavorites: action.payload
+        myFavorites: action.payload,
+        allCharactersFav: action.payload
       };
 
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: action.payload
+        myFavorites: action.payload,
+        allCharactersFav: action.payload,
 
         /*      
         *Esto ya no lo uso   
@@ -54,37 +56,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         myFavorites: [...newOrder],
       };
-    /*         case ORDER:
-                const newOrder = state.allCharactersFav.sort((a,b) => {
-                    if (a.id > b.id) {
-                        return 'A' === action.payload ? 1 : -1
-                    }
-                    if (a.id < b.id) {
-                        return 'D' === action.payload ? 1 : -1
-                    }
-                    return 0
-                });
-                return {
-                    ...state,
-                    myFavorites: newOrder
-                } */
 
     case RESET:
       return {
         ...state,
         myFavorites: [...state.allCharactersFav],
       };
-
-    /* case FILTER:
-            return {...state.allCharacters, allCharacters: state.allCharacters.filter((genero)=> genero.gender === (action.payload))}
-   
-        case ORDER:
-            if (action.payload === 'A'){
-                return {...state.allCharacters.sort((a,b) => a.id - b.id)}
-            }; 
-            if (action.payload === 'D'){
-                return {...state.allCharacters.sort((a,b) => b.id - a.id)}
-            }; */
 
     default:
       return { ...state };

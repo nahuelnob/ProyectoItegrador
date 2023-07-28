@@ -36,18 +36,20 @@ function App() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const login = ({ email, password }) => {
-    axios(
-      `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
-    ).then(({ data }) => {
+  const login = async ({ email, password }) => {
+    try {
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
+      );
+      console.log("la datarda --->", data);
       const { access } = data;
-      access === true
-        ? alert("Login exitoso")
-        : alert("Alguno de los datos son incorrectos");
+      access === true && alert("login exitoso");
       setAccess(access);
       setEmail(email);
       access && navigate("/home");
-    });
+    } catch (error) {
+      window.alert(error.message);
+    }
   };
 
   const logout = () => {
@@ -75,18 +77,6 @@ function App() {
     } catch (error) {
       window.alert(error.message);
     }
-
-    /*     axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("No escribiste nada payaso");
-        }
-      })
-      .catch((error) => {
-        window.alert(error.error);
-      }); */
   };
   ////////////////////////////////////////////////
 
@@ -146,12 +136,6 @@ function App() {
 
 export default App;
 
-//Cosas que modifique
-{
-  /*          <Route path='/home' element={<SearchBar onSearch={onSearch}/>}/>
-         <Route path='/home' element={<Cards characters={characters} onClose={onClose} logout={logout}/>}/> */
-}
-
 ////////////////////////////////////////////////////////////////////
 //* OnSearch viejo con promesas
 
@@ -167,6 +151,8 @@ export default App;
 .catch(() => {
   window.alert("No existe personaje con ese ID");
 }); */
+
+
 ////////////////////////////////////////////////////////////////////
 //* Login Viejo
 /*    const login = (userData) => {
@@ -177,4 +163,16 @@ export default App;
       } else {
          alert('Alguno de los datos son incorrectos')
       } */
+//* Login con promesa
+/*     axios(
+      `http://localhost:3001/rickandmorty/login?email=${email}&password=${password}`
+    ).then(({ data }) => {
+      const { access } = data;
+      access === true
+        ? alert("Login exitoso")
+        : 
+      setAccess(access);
+      setEmail(email);
+      access && navigate("/home");
+    }); */
 ////////////////////////////////////////////////////////////////////
