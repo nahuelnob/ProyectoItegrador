@@ -5,7 +5,7 @@ const About = () => {
         <div className={style.container}>
             <div className={style.div}>
                 <div className={style.divIm}>
-                    <img className={style.img} src='https://scontent.fros10-1.fna.fbcdn.net/v/t39.30808-6/356112277_6496155513770092_6006082958775213658_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGv-TigaMUxVWC-Z_rHf7fctL10iveSYMu0vXSK95Jgy0KSFVgFNRLuCJizNkTDGliGqOaCnYZOVU0n7I9ve-kZ&_nc_ohc=Nt0UYbKzW-wAX9Mc91e&_nc_ht=scontent.fros10-1.fna&oh=00_AfBqrkw3kfOHse1wD-XQ1zjNwRn7Pwyg-K8KVXqLu_ePhg&oe=64A16A04' alt="" width='300px' />
+                    <img className={style.img} src='https://scontent.fros10-1.fna.fbcdn.net/v/t39.30808-6/356112277_6496155513770092_6006082958775213658_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7f8c78&_nc_eui2=AeGv-TigaMUxVWC-Z_rHf7fctL10iveSYMu0vXSK95Jgy0KSFVgFNRLuCJizNkTDGliGqOaCnYZOVU0n7I9ve-kZ&_nc_ohc=KaP3kVEzqLsAX8UKzYf&_nc_ht=scontent.fros10-1.fna&oh=00_AfB2C_-cUUNtbjjUGMcoAa3YBPjAzRSp8KhY6Z1NIhsQDw&oe=64DAC344' alt="" width='300px' />
                 </div>
                     
                 <div className={style.texto}>

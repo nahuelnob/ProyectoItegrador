@@ -62,7 +62,7 @@ function App() {
   }, [access]);
 
   ////////////////////////////////////////////////
-
+  //          ONSEARCH
   const onSearch = async (id) => {
     const repetido = characters.find((item) => item.id === Number(id));
     if (repetido) return alert("¡Este personaje ya fue agregado!");
