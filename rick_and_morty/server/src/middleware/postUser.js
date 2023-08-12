@@ -1,5 +1,4 @@
 const postUsers  = require("../controllers/postUser");
-/* const postFavorites = require("../controllers/postFavorites"); */
 
 
 const postUser = async (req, res) => {

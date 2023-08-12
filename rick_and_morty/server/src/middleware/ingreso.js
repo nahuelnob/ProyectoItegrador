@@ -1,5 +1,4 @@
 const logueate = require("../controllers/ingreso");
-const postFavorites = require("../controllers/postFavorites");
 
 const ingreso = async (req, res) => {
   const { email, password } = req.query;

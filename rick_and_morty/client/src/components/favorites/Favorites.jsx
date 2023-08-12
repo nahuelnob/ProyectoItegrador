@@ -35,7 +35,7 @@ const Favorites = (props) => {
   ////////////////////////////////////////////////
 
   const lista = props.myFavorites.map((carta) => {
-    const { id, name, status, species, gender, origin, image } = carta;
+    const { id, name, status, species, gender, origin, image} = carta;
 
     return (
       <Card

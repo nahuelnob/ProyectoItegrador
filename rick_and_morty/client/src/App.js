@@ -152,7 +152,6 @@ export default App;
   window.alert("No existe personaje con ese ID");
 }); */
 
-
 ////////////////////////////////////////////////////////////////////
 //* Login Viejo
 /*    const login = (userData) => {

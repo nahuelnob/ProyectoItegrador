@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const { postFav, deleteFavo } = require("../controllers/handleFavorites");
+/* const { postFav, deleteFavo } = require("../controllers/handleFavorites"); */
 const getCharById = require("../controllers/getCharById");
 
 const postUser = require('../middleware/postUser')
