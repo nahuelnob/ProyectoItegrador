@@ -9,7 +9,6 @@ const Nav = (props) => {
     }
 
     const [navBar, setNavBar] = useState(false)
-    console.log(navBar);
 
     const handleNavBar = () => {
         setNavBar(true)

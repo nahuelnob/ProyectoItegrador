@@ -9,7 +9,6 @@ import { useState } from "react";
 ////////////////////////////////////////////////
 
 const Favorites = (props) => {
-  console.log("colso", props);
   const { onClose } = props;
 
   ////////////////////////////////////////////////
