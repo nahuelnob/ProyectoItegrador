@@ -1,4 +1,5 @@
 const logueate = require("../controllers/ingreso");
+const postFavorites = require("../controllers/postFavorites");
 
 const ingreso = async (req, res) => {
   const { email, password } = req.query;
@@ -7,7 +8,7 @@ const ingreso = async (req, res) => {
       return res.status(400).json({ error: "Faltan datos" });
 
     const succes = await logueate(email);
-    console.log(succes.password);
+
 
     succes.password === password
       ? res.status(200).json({ access: true })
